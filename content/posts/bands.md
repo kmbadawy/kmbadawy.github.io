@@ -1,6 +1,6 @@
 ---
 title: "Aren't we all tired from plotting bands?"
-date: 2026-08-15
+date: 2026-08-13
 draft: false
 math: false
 summary: "I hold the solution"
