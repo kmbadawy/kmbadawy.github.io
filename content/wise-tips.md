@@ -9,18 +9,20 @@ math: false
 
 Short, standalone tips — the kind of thing I'd tell a new student in
 passing. Click a title to expand it. New ones get added whenever I run into
-something worth writing down.
+something worth writing down. I will keep it professional and not stress on 
+the importance of checking convergence against energy cutoff and k-mesh !!!!!
+
 
 <div class="wise-tips">
 
 <details class="tip">
-<summary>Always check your convergence before you trust your physics</summary>
+<summary>Ensuring Wannier90 model convergence is a 'worth it' headache</summary>
 
-A beautiful band structure or a clean topological invariant means nothing
-if the underlying SCF, k-mesh, or energy cutoff hasn't converged. Before
-interpreting any result — spin texture, Berry phase, magnetic anisotropy —
-re-run it at a tighter setting and confirm the number doesn't move. If it
-moves, you were reading noise, not physics.
+Apart from obtaining a correct match between the band structure from VASP and that from
+wannier90. Ensure that your Fermi surface / surface state / Gap in k-plane of wanniertools 
+obey the underlying symmetries of the system. Sometimes you get a perfect band plot match 
+between W90 and VASP but the Fermi surface or surface state would look crooked and violated 
+inversion/time reversal if relevant.
 
 </details>
 
@@ -29,9 +31,8 @@ moves, you were reading noise, not physics.
 
 A "wrong" result is very often a default you didn't know you inherited —
 a convention, a unit, a flag that changed between versions. Before
-questioning your Hamiltonian or your setup, check what the software
-actually assumed on your behalf. Defaults are invisible until they bite
-you.
+questioning your setup, check what the software actually assumed on your behalf.
+Defaults are invisible until they bite you.
 
 </details>
 
@@ -46,13 +47,12 @@ did I get this number?" later.
 </details>
 
 <details class="tip">
-<summary>GIGO applies to literature too</summary>
+<summary>VASP versions =>6 require special care with wanniertools </summary>
 
-Garbage in, garbage out isn't just about input files — it applies to the
-papers you build on. Before trusting a reported value or convention,
-check whether the paper itself converged its calculation, and whether its
-definition of a quantity matches yours. Assumptions inherited silently
-from a paper are still garbage in.
+In wanniertools software, the tag 'Package' determies the SPIN ordering produced by 
+the first-principles package. VASP versions 6 and above order spins similar to 
+Quantum Espresso. To get the correct spin-texture and projections on surface states
+use the tag Package='QE'. 
 
 </details>
 
