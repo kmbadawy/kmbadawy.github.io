@@ -1,0 +1,60 @@
+.wise-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.wise-tips details.tip {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--entry);
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.wise-tips details.tip[open] {
+  border-color: var(--primary);
+}
+
+.wise-tips details.tip summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 18px;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wise-tips details.tip summary::-webkit-details-marker {
+  display: none;
+}
+
+.wise-tips details.tip summary::after {
+  content: "+";
+  font-weight: 400;
+  font-size: 1.2em;
+  color: var(--secondary);
+  transition: transform 0.15s ease;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.wise-tips details.tip[open] summary::after {
+  content: "\2212";
+}
+
+.wise-tips details.tip .tip-body,
+.wise-tips details.tip p {
+  padding: 0 18px 16px 18px;
+  margin: 0;
+  color: var(--content);
+  line-height: 1.6;
+}
+
+.wise-tips details.tip[open] summary {
+  border-bottom: 1px solid var(--border);
+}

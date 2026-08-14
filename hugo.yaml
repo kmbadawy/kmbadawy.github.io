@@ -71,6 +71,10 @@ menu:
       name: Tags
       url: /tags/
       weight: 20
+    - identifier: wise-tips
+      name: Wise Tips
+      url: /wise-tips/
+      weight: 25
     - identifier: about
       name: About
       url: /about/
