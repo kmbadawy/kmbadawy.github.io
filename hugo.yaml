@@ -42,7 +42,7 @@ params:
       I'm currently a PhD candidate in Materials Science at Khalifa University, UAE,
       expected to graduate in December 2026. My research sits in condensed matter
       physics — electronic structure, topological phases of matter, strongly
-      correlated electron systems, and magnetism — carried out mostly through
+      correlated electron systems, and magnetism, carried out mostly through
       first-principles calculations in VASP.
 
       Computational modeling can be overwhelming when you're starting out, and I
@@ -86,17 +86,10 @@ menu:
       name: Posts
       url: /posts/
       weight: 10
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 20
     - identifier: wise-tips
       name: Wise Tips
       url: /wise-tips/
       weight: 25
-    - identifier: about
-      name: About
-      url: /about/
       weight: 30
     - identifier: search
       name: Search
