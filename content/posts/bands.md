@@ -26,4 +26,4 @@ bands or waiting for parsing files.
 
 More details are found at https://github.com/kmbadawy/pltband.git
 
-You can find plotting examples in our paper https://doi.org/10.1038/s41524-026-02029-6
+You can find plotting examples in our paper https://doi.org/10.1038/s41524-026-02029-6 
