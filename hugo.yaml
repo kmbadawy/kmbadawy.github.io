@@ -1,0 +1,112 @@
+baseURL: "https://kmbadawy.github.io/"
+languageCode: en-us
+title: "Computational Notes"
+theme: PaperMod
+
+pagination:
+  pagerSize: 10
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+googleAnalytics: ""
+
+minify:
+  disableXML: true
+
+params:
+  env: production
+  title: "Computational Notes"
+  description: "Tips, tricks, and working notes on DFT, Wannier functions, and topological materials calculations."
+  keywords: [DFT, VASP, Wannier90, WannierBerri, topological materials, condensed matter, computational physics]
+  author: "Khaled"
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  ShowFullTextinRSS: true
+  ShowToc: true
+  TocOpen: false
+  comments: false
+  math: true
+
+  homeInfoParams:
+    Title: "Computational Notes"
+    Content: >
+      Working notes and tips on DFT+U, Wannier functions, and topological
+      invariant calculations — VASP, Wannier90, WannierBerri, WannierTools,
+      z2pack, and the scripts that glue them together.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/kmbadawy"
+
+  assets:
+    disableHLJS: true
+    favicon: "favicon.ico"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: monokai
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - ["\\[", "\\]"]
+            - ["$$", "$$"]
+          inline:
+            - ["\\(", "\\)"]
+        enable: true
+
+taxonomies:
+  tag: tags
+  series: series
