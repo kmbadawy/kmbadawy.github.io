@@ -84,7 +84,7 @@ menu:
   main:
     - identifier: posts
       name: Posts
-      url: /content/posts/
+      url: /posts/
       weight: 10
     - identifier: wise-tips
       name: Wise Tips
