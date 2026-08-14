@@ -15,10 +15,15 @@ I present to you pltband.py !
 
 A one script that will read the BAND.dat and PBAND files to plot a nice band structure plot 
 (like those you see in Nature journals). Briefly, code can:
+
     1. plot spin, non-spin, or projected band structure. 
+
     2. Highlight bands by their index
+
     3. Truncate at a kpath or plot around a certain kpoint
+
     4. compare with wannier90_band.dat file
+
     5. Flexible formatting changes 
 
 All of this is done using a single command line. It is not perfect but after all we dont want to waste time plotting 
