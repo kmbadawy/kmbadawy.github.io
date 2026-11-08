@@ -20,7 +20,7 @@
   --code-bg: #eff1f3;
   --code-block-bg: #1b1d22;
 
-  --wide: 800px;
+  --wide: 1040px;
   --measure: 42rem;
   --gap: 24px;
   --radius: 8px;
@@ -56,7 +56,7 @@
 }
 
 /* ---------- Base ---------- */
-html { scroll-padding-top: 1rem; }
+html { scroll-padding-top: 5rem; }
 body, .list {
   font-family: var(--font-body);
   font-size: 17px;
@@ -98,7 +98,12 @@ h1, h2, h3, h4 {
 }
 
 /* ---------- Header ---------- */
-.site-header { border-bottom: 1px solid var(--border); background: var(--theme); }
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--theme) 88%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px);
+}
 .site-header__inner {
   max-width: calc(var(--wide) + var(--gap) * 2);
   margin: 0 auto;
@@ -152,7 +157,11 @@ h1, h2, h3, h4 {
 .btn__ext { font-size: 0.9em; opacity: 0.8; }
 
 /* ---------- Home ---------- */
-.hero { padding: var(--s7) 0 var(--s6); border-bottom: 1px solid var(--border); }
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: var(--s7); align-items: start;
+  padding: var(--s7) 0 var(--s7); border-bottom: 1px solid var(--border);
+}
+.hero__text { min-width: 0; }
 .hero__role {
   margin: 0 0 var(--s3);
   font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
@@ -162,7 +171,7 @@ h1, h2, h3, h4 {
   margin: 0 0 var(--s5);
   font-size: clamp(2.3rem, 7vw, 3.4rem); line-height: 1.08; letter-spacing: -0.02em;
 }
-.hero__lede { max-width: 40rem; font-size: 1.2rem; line-height: 1.65; color: var(--content); }
+.hero__lede { max-width: 38rem; font-size: 1.15rem; line-height: 1.65; color: var(--content); }
 .hero__lede p { margin: 0; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s5); }
 
@@ -338,7 +347,7 @@ details.toc a { color: var(--accent); }
   .site-nav { order: 3; width: 100%; margin-left: calc(var(--s3) * -1); }
   .theme-toggle { order: 2; }
   .menu { overflow-x: auto; }
-  .hero { padding: var(--s6) 0 var(--s5); }
+  .hero { grid-template-columns: 1fr; gap: var(--s6); padding: var(--s6) 0 var(--s5); }
   .hero__lede { font-size: 1.1rem; }
   .post-item { grid-template-columns: 1fr; }
   .post-item__body { grid-column: 1; }

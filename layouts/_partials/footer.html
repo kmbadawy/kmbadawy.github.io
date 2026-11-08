@@ -6,7 +6,7 @@
         </p>
         <ul class="site-footer__links">
             {{- range site.Params.socialIcons }}
-            <li><a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me">{{ replace ((.title | default .name) | title) "Github" "GitHub" }}</a></li>
+            <li><a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me">{{ .title | default .name }}</a></li>
             {{- end }}
             {{- with site.Home.OutputFormats.Get "rss" }}
             <li><a href="{{ .RelPermalink }}">RSS</a></li>

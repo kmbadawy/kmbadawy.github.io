@@ -4,27 +4,65 @@
 {{- $lede := index $paras 0 }}
 {{- $rest := delimit (after 1 $paras) "\n\n" }}
 {{- $name := .Name | default .Title }}
+{{- $profile := site.Data.profile }}
 
 <section class="hero" aria-labelledby="hero-name">
-    {{- with .Role }}<p class="hero__role">{{ . }}</p>{{ end }}
-    <h1 class="hero__name" id="hero-name">{{ $name }}</h1>
-    <div class="hero__lede">{{ $lede | $.Page.RenderString (dict "display" "block") }}</div>
-    <div class="hero__actions">
-        <a class="btn btn--primary" href="{{ "posts/" | absLangURL }}">Posts</a>
-        <a class="btn btn--ghost" href="{{ "wise-tips/" | absLangURL }}">Wise Tips</a>
-        {{- range site.Params.socialIcons }}
-        <a class="btn btn--ghost" href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me">{{ replace ((.title | default .name) | title) "Github" "GitHub" }}<span class="btn__ext" aria-hidden="true">&nearr;</span><span class="sr-only"> (opens in a new tab)</span></a>
+    <div class="hero__text">
+        {{- with .Role }}<p class="hero__role">{{ . }}</p>{{ end }}
+        <h1 class="hero__name" id="hero-name">{{ $name }}</h1>
+        <div class="hero__lede">{{ $lede | $.Page.RenderString (dict "display" "block") }}</div>
+        <div class="hero__actions">
+            <a class="btn btn--primary" href="#publications">Publications</a>
+            {{- with site.Params.contactEmail }}
+            <a class="btn btn--ghost" href="mailto:{{ . }}">Email</a>
+            {{- end }}
+            {{- range site.Params.socialIcons }}
+            <a class="btn btn--ghost" href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me">{{ .title | default .name }}<span class="btn__ext" aria-hidden="true">&nearr;</span><span class="sr-only"> (opens in a new tab)</span></a>
+            {{- end }}
+        </div>
+        {{- with .Interests }}
+        <div class="interests">
+            <h2 class="interests__label">Research interests</h2>
+            <ul class="interests__list">
+                {{- range . }}<li>{{ . }}</li>{{ end }}
+            </ul>
+        </div>
         {{- end }}
     </div>
-    {{- with .Interests }}
-    <div class="interests">
-        <h2 class="interests__label">Research interests</h2>
-        <ul class="interests__list">
-            {{- range . }}<li>{{ . }}</li>{{ end }}
-        </ul>
-    </div>
+    {{- with $profile.glance }}
+    <aside class="glance" aria-label="At a glance">
+        <h2 class="glance__title">At a glance</h2>
+        <dl class="glance__list">
+            {{- range . }}
+            <div class="glance__row"><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>
+            {{- end }}
+        </dl>
+    </aside>
     {{- end }}
 </section>
+
+{{- with $profile.publications }}
+<section class="section" id="publications" aria-labelledby="pubs-title">
+    <div class="section__head">
+        <h2 class="section__title" id="pubs-title">Selected publications</h2>
+        <a class="section__more" href="https://scholar.google.com/citations?user=ujP-RjsAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Full list on Google Scholar <span aria-hidden="true">&nearr;</span><span class="sr-only"> (opens in a new tab)</span></a>
+    </div>
+    <ol class="pubs">
+        {{- range . }}
+        {{- $authors := replace (replace (.authors | htmlEscape) "K. M. Badawy" "<strong>K. M. Badawy</strong>") "K. Badawy" "<strong>K. Badawy</strong>" }}
+        <li class="pub">
+            <span class="pub__year">{{ .year }}</span>
+            <div class="pub__body">
+                <h3 class="pub__title">{{ .title }}</h3>
+                <p class="pub__authors">{{ $authors | safeHTML }}</p>
+                <p class="pub__venue"><em>{{ .venue }}</em> {{ .detail }} ({{ .year }})
+                    <a class="pub__doi" href="https://doi.org/{{ .doi }}" target="_blank" rel="noopener noreferrer">doi:{{ .doi }}<span class="sr-only"> (opens in a new tab)</span></a></p>
+            </div>
+        </li>
+        {{- end }}
+    </ol>
+</section>
+{{- end }}
 
 {{- $mainSections := site.Params.mainSections | default (slice "posts") }}
 {{- $posts := where site.RegularPages "Type" "in" $mainSections }}

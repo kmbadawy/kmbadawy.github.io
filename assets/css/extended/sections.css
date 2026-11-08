@@ -1,0 +1,53 @@
+/* Profile sections on the home page: glance card and publications. */
+
+.glance {
+  background: var(--entry); border: 1px solid var(--border); border-radius: 14px;
+  padding: var(--s5); border-top: 3px solid var(--accent);
+}
+.glance__title {
+  margin: 0 0 var(--s3);
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--secondary);
+}
+.glance__list { margin: 0; }
+.glance__row { padding: var(--s3) 0; border-top: 1px solid var(--border); }
+.glance__row:first-child { border-top: 0; padding-top: 0; }
+.glance__row:last-child { padding-bottom: 0; }
+.glance dt { font-size: 0.78rem; font-weight: 600; color: var(--accent); margin: 0; }
+.glance dd { margin: 2px 0 0; font-size: 0.95rem; line-height: 1.5; color: var(--primary); }
+
+.section[id] { scroll-margin-top: 5rem; }
+
+/* Publications */
+.pubs { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--border); }
+.pub {
+  display: grid; grid-template-columns: 4.5rem 1fr; column-gap: var(--s5);
+  padding: var(--s5) 0; border-top: 1px solid var(--border);
+}
+.pub__year {
+  padding-top: 0.2rem; font-size: 0.95rem; font-weight: 600; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.pub__body { min-width: 0; }
+.pub__title { margin: 0; font-size: 1.12rem; line-height: 1.4; font-weight: 600; }
+.pub__authors { margin: var(--s2) 0 0; font-size: 0.95rem; line-height: 1.55; color: var(--secondary); }
+.pub__authors strong { color: var(--primary); font-weight: 600; }
+.pub__venue { margin: var(--s1) 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--content); }
+.pub__doi {
+  display: inline-block; margin-left: var(--s2); font-size: 0.85rem; overflow-wrap: anywhere;
+  color: var(--accent); text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  text-underline-offset: 3px;
+}
+.pub__doi:hover { color: var(--accent-hover); text-decoration-color: currentColor; }
+
+@media (max-width: 640px) {
+  .pub { grid-template-columns: 1fr; }
+  .pub__year { padding: 0 0 var(--s1); }
+  .pub__doi { margin-left: 0; display: block; margin-top: var(--s1); }
+}
+
+.menu { scrollbar-width: none; }
+.menu::-webkit-scrollbar { display: none; }
+.section__head { flex-wrap: wrap; row-gap: var(--s1); }
+.section__title { overflow-wrap: normal; word-break: normal; }

@@ -1,0 +1,56 @@
+# Facts below are taken from the career profile (CV, Crossref-checked DOIs). Do not add unpublished work here.
+glance:
+  - label: Affiliation
+    value: Khalifa University, UAE
+  - label: Based in
+    value: Abu Dhabi, UAE
+  - label: Fields
+    value: Magnetism, strongly correlated systems, topological states, altermagnets
+  - label: Methods
+    value: First-principles calculations, tight-binding methods, spin dynamics, molecular dynamics
+  - label: Tools
+    value: VASP, VASPKIT, Wannier90, WannierTools, Phonopy
+
+publications:
+  - year: 2026
+    authors: K. Badawy, L. Zheng, N. Singh
+    title: Discovery of a novel half metallic 2D Cr2Se3 monolayer with high Curie temperature from correlated antiferromagnetic 2D CrSe2
+    venue: npj Computational Materials
+    detail: "12, 177"
+    doi: 10.1038/s41524-026-02029-6
+  - year: 2026
+    authors: K. Badawy, L. Zheng, N. Singh
+    title: Kramers nodal lines and disorder-driven 2D Kramers–Weyl fermions in transition metal dichalcogenides monolayers
+    venue: Journal of Physics and Chemistry of Solids
+    detail: "208, 113123"
+    doi: 10.1016/j.jpcs.2025.113123
+  - year: 2025
+    authors: K. Badawy, L. Zheng, N. Singh
+    title: Strong correlations and disorder driven metal to insulator transition in high entropy (MoVNbW)S2 monolayer
+    venue: 2D Materials
+    detail: "12, 025020"
+    doi: 10.1088/2053-1583/adafc0
+  - year: 2024
+    authors: G. Sharma, R. Verma, S. Masuda, K. M. Badawy, N. Singh, T. Tsukuda, V. Polshettiwar
+    title: Pt-doped Ru nanoparticles loaded on 'black gold' plasmonic nanoreactors as air stable reduction catalysts
+    venue: Nature Communications
+    detail: "15, 713"
+    doi: 10.1038/s41467-024-44954-4
+  - year: 2022
+    authors: K. Badawy, K. Liao, N. Singh
+    title: Atomistic insights of Ti-based MXenes thermal decomposition and transformation to carbon-supported Ti–O phases for energy applications
+    venue: ACS Applied Nano Materials
+    detail: "5, 16731–16740"
+    doi: 10.1021/acsanm.2c03723
+  - year: 2021
+    authors: J. Syarif, K. Badawy, H. A. Hussien
+    title: Atomistic simulation of the diffusion behavior in Al-Fe
+    venue: Nuclear Materials and Energy
+    detail: "29, 101073"
+    doi: 10.1016/j.nme.2021.101073
+  - year: 2021
+    authors: K. Badawy, J. Syarif
+    title: A multiscale approach for modeling metal laser welding
+    venue: AIP Advances
+    detail: "11, 035308"
+    doi: 10.1063/5.0043764
