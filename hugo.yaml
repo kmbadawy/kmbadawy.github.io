@@ -39,8 +39,8 @@ params:
   homeInfoParams:
     Title: "Khaled's Blog"
     Content: |
-      I'm currently a PhD candidate in Materials Science at Khalifa University, UAE,
-      expected to graduate in December 2026. My research sits in condensed matter
+      I completed my PhD in Materials Science at Khalifa University, UAE, in 2026
+      (defended October 2026). My research sits in condensed matter
       physics — electronic structure, topological phases of matter, strongly
       correlated electron systems, and magnetism, carried out mostly through
       first-principles calculations in VASP.
