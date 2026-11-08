@@ -89,7 +89,6 @@ menu:
     - identifier: wise-tips
       name: Wise Tips
       url: /wise-tips/
-      weight: 25
       weight: 30
     - identifier: search
       name: Search
