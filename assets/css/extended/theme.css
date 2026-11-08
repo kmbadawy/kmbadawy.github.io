@@ -1,0 +1,121 @@
+/* Restrained academic refresh: one accent colour, serif headings, sans body. */
+:root {
+  --accent: #1d4f91;
+  --accent-soft: rgba(29, 79, 145, 0.08);
+  --theme: #fcfcfb;
+  --entry: #ffffff;
+  --primary: #1b1f24;
+  --content: #2a2f36;
+  --secondary: #5b6470;
+  --tertiary: #dfe3e8;
+  --border: #e6e9ed;
+  --main-width: 740px;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-head: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+
+:root[data-theme="dark"] {
+  --accent: #8db8ee;
+  --accent-soft: rgba(141, 184, 238, 0.12);
+  --theme: #16191d;
+  --entry: #1d2126;
+  --primary: #e8eaed;
+  --content: #cfd3d8;
+  --secondary: #9aa2ac;
+  --tertiary: #343a41;
+  --border: #2b3036;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  background: var(--theme);
+  color: var(--content);
+  -webkit-font-smoothing: antialiased;
+}
+
+.list { background: var(--theme); }
+
+.main { padding-top: 1.5rem; }
+
+/* Headings */
+h1, h2, h3, h4,
+.post-title, .entry-hint-parent, .first-entry .entry-header h2 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--primary);
+}
+.post-content h2 { margin-top: 2.2rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); font-size: 1.45rem; }
+.post-content h3 { margin-top: 1.8rem; font-size: 1.2rem; }
+.post-title { font-size: 2.1rem; line-height: 1.25; }
+
+/* Header and navigation */
+.header { border-bottom: 1px solid var(--border); }
+.nav { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+.logo a { font-family: var(--font-head); font-size: 1.15rem; font-weight: 600; letter-spacing: 0; color: var(--primary); }
+#menu { gap: 4px; }
+#menu a {
+  font-size: 0.95rem; font-weight: 500; color: var(--secondary);
+  padding: 4px 2px; border-bottom: 2px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+#menu a:hover { color: var(--primary); }
+#menu .active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.nav a, .nav button { text-decoration: none; }
+
+/* Home intro */
+.first-entry {
+  background: transparent; border: 0; border-bottom: 1px solid var(--border);
+  border-radius: 0; box-shadow: none; padding: 1rem 0 2rem; margin-bottom: 2rem; min-height: 0;
+}
+.first-entry .entry-header h1 { font-size: 2.2rem; line-height: 1.2; }
+.first-entry .entry-content { font-size: 1.02rem; line-height: 1.75; color: var(--content); margin: 1rem 0; }
+.first-entry .entry-content p { margin: 0 0 1em; }
+
+/* Links */
+.post-content a, .first-entry a, .post-footer a {
+  color: var(--accent); box-shadow: none; text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  text-underline-offset: 3px; text-decoration-thickness: 1px;
+  transition: text-decoration-color .15s ease, color .15s ease;
+}
+.post-content a:hover, .first-entry a:hover { text-decoration-color: var(--accent); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+/* Post list cards */
+.post-entry {
+  background: var(--entry); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: none; padding: 1.2rem 1.4rem; margin-bottom: 1rem;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.post-entry:hover { border-color: var(--accent); transform: none; }
+.post-entry:active { transform: none; }
+.entry-header h2 { font-size: 1.3rem; }
+.entry-content { color: var(--secondary); font-size: 0.97rem; }
+.entry-footer, .post-meta { color: var(--secondary); font-size: 0.85rem; }
+
+/* Code, quotes, tables */
+.post-content code { border-radius: 4px; font-size: 0.88em; }
+.post-content blockquote { border-inline-start: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 6px 6px 0; padding: 0.4rem 1rem; }
+.post-content table th { font-family: var(--font-head); }
+
+/* Wise tips: align with the accent */
+.wise-tips details.tip { border-radius: 10px; background: var(--entry); }
+.wise-tips details.tip[open] { border-color: var(--accent); }
+.wise-tips details.tip summary { color: var(--primary); font-family: var(--font-head); font-size: 1.05rem; }
+.wise-tips details.tip summary:hover { color: var(--accent); }
+
+/* Footer */
+.footer { color: var(--secondary); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+.social-icons a { color: var(--secondary); }
+.social-icons a:hover { color: var(--accent); }
+.top-link { background: var(--entry); border: 1px solid var(--border); box-shadow: none; }
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .post-title, .first-entry .entry-header h1 { font-size: 1.7rem; }
+  .post-entry { padding: 1rem; }
+  #menu { gap: 0; }
+}
