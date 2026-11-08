@@ -1,0 +1,15 @@
+{{- /* One row in a list of posts. Expects a page. */ -}}
+<article class="post-item">
+    {{- if not .Date.IsZero }}
+    <time class="post-item__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    {{- end }}
+    <div class="post-item__body">
+        <h3 class="post-item__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{- if (ne (.Param "hideSummary") true) }}
+        <p class="post-item__summary">{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+        {{- end }}
+        {{- if and .IsPage (.Param "ShowReadingTime") }}
+        <p class="post-item__meta">{{ .ReadingTime }} min read</p>
+        {{- end }}
+    </div>
+</article>

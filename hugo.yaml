@@ -38,6 +38,14 @@ params:
 
   homeInfoParams:
     Title: "Khaled's Blog"
+    Name: "Khaled Badawy"
+    Role: "PhD in Materials Science · Khalifa University, UAE"
+    Interests:
+      - Electronic structure
+      - Topological phases of matter
+      - Strongly correlated electron systems
+      - Magnetism
+      - First-principles calculations (VASP)
     Content: |
       I completed my PhD in Materials Science at Khalifa University, UAE, in 2026.
       My research sits in condensed matter

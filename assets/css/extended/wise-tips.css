@@ -1,60 +1,75 @@
+/* Wise Tips: native <details> accordions, restyled. Behaviour is unchanged. */
 .wise-tips {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 24px;
+  gap: var(--s3);
+  margin-top: var(--s6);
 }
 
 .wise-tips details.tip {
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--entry);
   padding: 0;
   overflow: hidden;
   transition: border-color 0.15s ease;
 }
-
-.wise-tips details.tip[open] {
-  border-color: var(--primary);
-}
+.wise-tips details.tip:hover { border-color: var(--tertiary); }
+.wise-tips details.tip[open] { border-color: var(--accent); }
 
 .wise-tips details.tip summary {
-  cursor: pointer;
-  list-style: none;
-  padding: 14px 18px;
-  font-weight: 600;
-  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--s4);
+  width: 100%;
+  padding: var(--s4) var(--s5);
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-head);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--primary);
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
+.wise-tips details.tip summary::-webkit-details-marker { display: none; }
+.wise-tips details.tip summary:hover { color: var(--accent); background: var(--accent-soft); }
+.wise-tips details.tip summary:focus-visible { outline-offset: -2px; border-radius: 10px; }
 
-.wise-tips details.tip summary::-webkit-details-marker {
-  display: none;
-}
-
+/* chevron drawn with borders so it needs no icon font */
 .wise-tips details.tip summary::after {
-  content: "+";
-  font-weight: 400;
-  font-size: 1.2em;
-  color: var(--secondary);
-  transition: transform 0.15s ease;
-  margin-left: 12px;
+  content: "";
   flex-shrink: 0;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.15rem;
+  border-right: 2px solid var(--secondary);
+  border-bottom: 2px solid var(--secondary);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.2s ease, border-color 0.15s ease;
 }
-
 .wise-tips details.tip[open] summary::after {
-  content: "\2212";
+  content: "";
+  transform: rotate(-135deg) translate(-2px, -2px);
+  border-color: var(--accent);
 }
 
-.wise-tips details.tip .tip-body,
+.wise-tips details.tip[open] summary { border-bottom: 1px solid var(--border); }
+
 .wise-tips details.tip p {
-  padding: 0 18px 16px 18px;
   margin: 0;
+  padding: var(--s4) var(--s5) 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--content);
-  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
+.wise-tips details.tip p:last-child { padding-bottom: var(--s5); }
 
-.wise-tips details.tip[open] summary {
-  border-bottom: 1px solid var(--border);
+@media (max-width: 640px) {
+  .wise-tips details.tip summary { padding: var(--s3) var(--s4); font-size: 1.02rem; }
+  .wise-tips details.tip p { padding: var(--s3) var(--s4) 0; }
+  .wise-tips details.tip p:last-child { padding-bottom: var(--s4); }
 }

@@ -1,0 +1,11 @@
+{{- define "main" }}
+<section class="notfound">
+    <p class="notfound__code">404</p>
+    <h1 class="notfound__title">Page not found</h1>
+    <p class="notfound__text">This page does not exist, or it has moved.</p>
+    <div class="hero__actions">
+        <a class="btn btn--primary" href="{{ "" | absLangURL }}">Back to home</a>
+        <a class="btn btn--ghost" href="{{ "posts/" | absLangURL }}">Posts</a>
+    </div>
+</section>
+{{- end }}

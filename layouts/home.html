@@ -1,0 +1,55 @@
+{{- define "main" }}
+{{- with site.Params.homeInfoParams }}
+{{- $paras := split (replace (trim .Content "\n ") "\r\n" "\n") "\n\n" }}
+{{- $lede := index $paras 0 }}
+{{- $rest := delimit (after 1 $paras) "\n\n" }}
+{{- $name := .Name | default .Title }}
+
+<section class="hero" aria-labelledby="hero-name">
+    {{- with .Role }}<p class="hero__role">{{ . }}</p>{{ end }}
+    <h1 class="hero__name" id="hero-name">{{ $name }}</h1>
+    <div class="hero__lede">{{ $lede | $.Page.RenderString (dict "display" "block") }}</div>
+    <div class="hero__actions">
+        <a class="btn btn--primary" href="{{ "posts/" | absLangURL }}">Posts</a>
+        <a class="btn btn--ghost" href="{{ "wise-tips/" | absLangURL }}">Wise Tips</a>
+        {{- range site.Params.socialIcons }}
+        <a class="btn btn--ghost" href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me">{{ replace ((.title | default .name) | title) "Github" "GitHub" }}<span class="btn__ext" aria-hidden="true">&nearr;</span><span class="sr-only"> (opens in a new tab)</span></a>
+        {{- end }}
+    </div>
+    {{- with .Interests }}
+    <div class="interests">
+        <h2 class="interests__label">Research interests</h2>
+        <ul class="interests__list">
+            {{- range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+    </div>
+    {{- end }}
+</section>
+
+{{- $mainSections := site.Params.mainSections | default (slice "posts") }}
+{{- $posts := where site.RegularPages "Type" "in" $mainSections }}
+{{- $posts = where $posts "Params.hiddenInHomeList" "!=" "true" }}
+{{- with first 5 $posts }}
+<section class="section" aria-labelledby="latest-title">
+    <div class="section__head">
+        <h2 class="section__title" id="latest-title">Latest posts</h2>
+        <a class="section__more" href="{{ "posts/" | absLangURL }}">All posts <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="post-list">
+        {{- range . }}{{ partial "post-item.html" . }}{{ end }}
+    </div>
+</section>
+{{- end }}
+
+{{- if $rest }}
+<section class="section section--about" aria-labelledby="about-title">
+    <div class="section__head">
+        <h2 class="section__title" id="about-title">About this site</h2>
+    </div>
+    <div class="prose md-content">
+        {{ $rest | $.Page.RenderString (dict "display" "block") }}
+    </div>
+</section>
+{{- end }}
+{{- end }}
+{{- end }}
