@@ -51,3 +51,12 @@
 .menu::-webkit-scrollbar { display: none; }
 .section__head { flex-wrap: wrap; row-gap: var(--s1); }
 .section__title { overflow-wrap: normal; word-break: normal; }
+
+/* Compact latest posts card (sits where the glance card was) */
+.latest__list { list-style: none; margin: 0; padding: 0; }
+.latest__item { padding: var(--s3) 0; border-top: 1px solid var(--border); }
+.latest__item:first-child { border-top: 0; padding-top: 0; }
+.latest__date { display: block; font-size: 0.78rem; color: var(--secondary); font-variant-numeric: tabular-nums; }
+.latest__link { display: block; margin-top: 2px; font-size: 0.95rem; line-height: 1.4; font-weight: 600; color: var(--primary); }
+.latest__link:hover { color: var(--accent); }
+.latest__all { display: inline-block; margin-top: var(--s3); font-size: 0.85rem; }

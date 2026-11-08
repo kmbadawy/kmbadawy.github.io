@@ -42,17 +42,16 @@ params:
     Name: "Khaled Badawy"
     Role: "PhD in Materials Science · Khalifa University, UAE"
     Interests:
-      - Electronic structure
+      - Strongly correlated systems
+      - "Magnetism: altermagnets & compensated magnets"
       - Topological phases of matter
-      - Strongly correlated electron systems
-      - Magnetism
-      - Altermagnets
-      - First-principles calculations (VASP)
+      - Electronic properties of disordered systems
     Content: |
       I completed my PhD in Materials Science at Khalifa University, UAE, in 2026.
       My research sits in condensed matter
-      physics — electronic structure, topological phases of matter, strongly
-      correlated electron systems, and magnetism, carried out mostly through
+      physics — strongly correlated systems, magnetism (altermagnets and
+      compensated magnets), topological phases of matter, and the electronic
+      properties of disordered systems, carried out mostly through
       first-principles calculations in VASP.
 
       Computational modeling can be overwhelming when you're starting out, and I

@@ -5,7 +5,7 @@ glance:
   - label: Based in
     value: Abu Dhabi, UAE
   - label: Fields
-    value: Magnetism, strongly correlated systems, topological states, altermagnets
+    value: Strongly correlated systems; magnetism (altermagnets and compensated magnets); topological phases of matter; electronic properties of disordered systems
   - label: Methods
     value: First-principles calculations, tight-binding methods, spin dynamics, molecular dynamics
   - label: Tools
